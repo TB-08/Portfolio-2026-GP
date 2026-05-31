@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio of Văn Hữu Gia Phát, Graphic Designer focused on Social Media Design, Logo Design and Website UI UX."
+    />
+    <title>Văn Hữu Gia Phát — Graphic Design Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script>
+      const directOpenPath = /\/open-directly\/index\.html$/i;
+
+      if (window.location.protocol === "file:" && !directOpenPath.test(window.location.pathname)) {
+        window.location.replace("./open-directly/index.html");
+      }
+    </script>
+    <style>
+      /* --- Software Icon Patch --- */
+      .software-icon-box {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 44px !important;
+        height: 44px !important;
+        background: rgba(255, 255, 255, 0.05) !important;
+        border: 1px solid rgba(255, 255, 255, 0.12) !important;
+        border-radius: 10px !important;
+        transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1) !important;
+        position: relative !important;
+        overflow: hidden !important;
+        cursor: pointer !important;
+        padding: 0 !important;
+      }
+      .software-icon-box:hover {
+        background: rgba(255, 255, 255, 0.1) !important;
+        border-color: rgba(93, 133, 219, 0.4) !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2), 0 0 15px rgba(93, 133, 219, 0.15) !important;
+      }
+      .software-mini-logo, .software-icon-box img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        opacity: 0.85 !important;
+        transition: all 0.3s ease !important;
+        display: block !important;
+      }
+      .software-icon-box:hover .software-mini-logo, .software-icon-box:hover img {
+        opacity: 1 !important;
+        transform: scale(1.05) !important;
+      }
+      .white-bg {
+        background: #ffffff !important;
+        border-color: #ffffff !important;
+      }
+      .profile-software {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 12px !important;
+        margin-top: 16px !important;
+      }
+      /* Prevent date wrapping in Experience/Timeline */
+      [class*="Experience"] span, 
+      [class*="experience"] span,
+      [class*="Timeline"] span,
+      [class*="timeline"] span {
+        white-space: nowrap !important;
+      }
+      /* Hide avatar decorations (Blue curve and Plus sign) */
+      .portrait-placeholder::after,
+      .portrait-placeholder span {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module">
+      const directBuildPath = /\/open-directly\/index\.html$/i;
+
+      if (window.location.protocol !== "file:" || directBuildPath.test(window.location.pathname)) {
+        import("/src/main.jsx");
+      }
+    </script>
+    <!-- Patch script to replace text with icons (Using Local Assets from "ảnh icon" folder) -->
+    <script>
+      (function() {
+        const iconPaths = {
+          'Photoshop': encodeURI('./ảnh icon/Adobe_Photoshop_CC_icon.svg.png'),
+          'Illustrator': encodeURI('./ảnh icon/Adobe_Illustrator_CC_icon.svg.png'),
+          'CapCut': encodeURI('./ảnh icon/fe973ef75e14e96c5fc5cdf4fcdc0ef4.jpg'),
+          'Lightroom': encodeURI('./ảnh icon/Adobe-Lightroom-Logo-Photo-Editing.webp'),
+          'After Effects': encodeURI('./ảnh icon/Adobe_After_Effects_CC_icon.svg.png')
+        };
+
+        function patchSoftware() {
+          const container = document.querySelector('.profile-software');
+          if (!container) return;
+
+          container.innerHTML = '';
+          Object.entries(iconPaths).forEach(([name, path]) => {
+            const box = document.createElement('div');
+            box.className = 'software-icon-box';
+            box.title = name;
+            if (name === 'CapCut') {
+              box.classList.add('white-bg');
+            }
+            const img = document.createElement('img');
+            img.src = path;
+            img.alt = name;
+            img.className = 'software-mini-logo';
+            if (name === 'Lightroom' || name === 'CapCut') {
+              img.style.transform = 'scale(1.7)';
+              img.style.transformOrigin = 'center';
+            }
+            box.appendChild(img);
+            container.appendChild(box);
+          });
+          
+          container.dataset.patched = 'true';
+        }
+
+        const observer = new MutationObserver(() => {
+          const target = document.querySelector('.profile-software');
+          if (target && target.dataset.patched !== 'true') patchSoftware();
+          
+          // Cleanup duplicate social media header (Chapter Entrance)
+          const elements = document.querySelectorAll('.contents-chapter, .contents-Chapter');
+          elements.forEach(el => {
+            if (el.textContent.includes('Social Media')) el.remove();
+          });
+        });
+
+        observer.observe(document.body, { childList: true, subtree: true });
+        [100, 500, 1000, 2000].forEach(d => setTimeout(patchSoftware, d));
+      })();
+    </script>
+  </body>
+</html>

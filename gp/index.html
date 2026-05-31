@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio of Văn Hữu Gia Phát, Graphic Designer focused on Social Media Design, Logo Design and Website UI UX."
+    />
+    <title>Văn Hữu Gia Phát — Graphic Design Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script>
+      const directOpenPath = /\/open-directly\/index\.html$/i;
+
+      if (window.location.protocol === "file:" && !directOpenPath.test(window.location.pathname)) {
+        window.location.replace("./open-directly/index.html");
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module">
+      const directBuildPath = /\/open-directly\/index\.html$/i;
+
+      if (window.location.protocol !== "file:" || directBuildPath.test(window.location.pathname)) {
+        import("/src/main.jsx");
+      }
+    </script>
+  </body>
+</html>
