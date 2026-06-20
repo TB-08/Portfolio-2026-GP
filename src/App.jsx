@@ -30,9 +30,30 @@ function App() {
 
     rafId = requestAnimationFrame(raf);
 
+    // Global listener for smooth anchor scroll via Lenis
+    const handleAnchorClick = (e) => {
+      const anchor = e.target.closest("a");
+      if (!anchor) return;
+      const href = anchor.getAttribute("href");
+      if (href && href.startsWith("#") && href.length > 1) {
+        const targetElement = document.querySelector(href);
+        if (targetElement) {
+          e.preventDefault();
+          lenis.scrollTo(targetElement, {
+            offset: -20, // Small comfortable offset from the top
+            duration: 1.1,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          });
+        }
+      }
+    };
+
+    document.addEventListener("click", handleAnchorClick);
+
     return () => {
       lenis.destroy();
       cancelAnimationFrame(rafId);
+      document.removeEventListener("click", handleAnchorClick);
     };
   }, []);
 
@@ -42,16 +63,28 @@ function App() {
       <Header />
       <main>
         <HeroSection />
-        <div className="optimize-render" style={{ zoom: "0.85" }}>
-          <AboutSection />
-          <ContentsSection />
-          <PortfolioShowcase />
-          <WorkProcessSection />
-          <ContactSection />
+        <div style={{ zoom: "0.85" }}>
+          <div className="optimize-render">
+            <AboutSection />
+          </div>
+          <div className="optimize-render">
+            <ContentsSection />
+          </div>
+          <div className="optimize-render">
+            <PortfolioShowcase />
+          </div>
+          <div className="optimize-render">
+            <WorkProcessSection />
+          </div>
+          <div className="optimize-render">
+            <ContactSection />
+          </div>
         </div>
       </main>
-      <div className="optimize-render" style={{ zoom: "0.85" }}>
-        <Footer />
+      <div style={{ zoom: "0.85" }}>
+        <div className="optimize-render">
+          <Footer />
+        </div>
       </div>
     </div>
   );

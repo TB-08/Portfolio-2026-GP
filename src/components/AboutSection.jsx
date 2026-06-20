@@ -36,7 +36,7 @@ function AboutSection() {
                 aria-label={`View ${cert.title} full size`}
               >
                 <div className="profile-cert-image-wrap">
-                  <img src={cert.src} alt={cert.alt} loading="lazy" />
+                  <img src={cert.src} alt={cert.alt} loading="lazy" decoding="async" />
                 </div>
                 <div className="profile-cert-info">
                   <span>{cert.tone}</span>
@@ -55,7 +55,7 @@ function AboutSection() {
                 aria-label={`View ${cert.title} full size`}
               >
                 <div className="profile-cert-image-wrap">
-                  <img src={cert.src} alt={cert.alt} loading="lazy" />
+                  <img src={cert.src} alt={cert.alt} loading="lazy" decoding="async" />
                 </div>
                 <div className="profile-cert-info">
                   <span>{cert.tone}</span>
@@ -79,6 +79,7 @@ function AboutSection() {
                   alt={`Portrait of ${designerProfile.name}`}
                   className="portrait-photo"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="profile-nameplate">
@@ -170,7 +171,7 @@ function AboutSection() {
                 aria-label={`View ${cert.title} full size`}
               >
                 <div className="profile-cert-image-wrap">
-                  <img src={cert.src} alt={cert.alt} loading="lazy" />
+                  <img src={cert.src} alt={cert.alt} loading="lazy" decoding="async" />
                 </div>
                 <div className="profile-cert-info">
                   <span>{cert.tone}</span>
@@ -189,7 +190,7 @@ function AboutSection() {
                 aria-label={`View ${cert.title} full size`}
               >
                 <div className="profile-cert-image-wrap">
-                  <img src={cert.src} alt={cert.alt} loading="lazy" />
+                  <img src={cert.src} alt={cert.alt} loading="lazy" decoding="async" />
                 </div>
                 <div className="profile-cert-info">
                   <span>{cert.tone}</span>
@@ -211,7 +212,7 @@ function AboutSection() {
                 role="button"
                 aria-label={`View ${cert.title} full size`}
               >
-                <img src={cert.src} alt={cert.alt} loading="lazy" />
+                <img src={cert.src} alt={cert.alt} loading="lazy" decoding="async" />
               </div>
               <div className="profile-cert-info" onClick={() => setSelectedCert(cert)}>
                 <span>{cert.tone}</span>
@@ -258,6 +259,7 @@ function AboutSection() {
                   src={selectedCert.src}
                   alt={selectedCert.alt}
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
 

@@ -563,16 +563,8 @@ export const keyVisualProjects = [
 
 export const experienceTimeline = [
   {
-    date: "2024 — Hiện tại",
-    role: "Thiết kế Đồ họa / Thiết kế Trực quan",
-  },
-  {
-    date: "2023 — 2024",
-    role: "Thiết kế Tự do (Freelance)",
-  },
-  {
-    date: "2022 — 2023",
-    role: "Thực tập sinh Thiết kế / Thiết kế Junior",
+    date: "2025 — Hiện tại",
+    role: "Thiết kế Đồ họa / UI UX / Editor",
   },
 ];
 
