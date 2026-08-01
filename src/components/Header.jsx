@@ -23,8 +23,8 @@ function Header() {
   return (
     <header
       className={`sticky top-0 z-50 border-b transition duration-300 ${hasScrolled || isMenuOpen
-          ? "border-white/10 bg-[#01040A]/78 shadow-[0_18px_70px_rgba(1,4,10,0.38)] backdrop-blur-xl"
-          : "border-transparent bg-transparent"
+        ? "border-white/10 bg-[#01040A]/78 shadow-[0_18px_70px_rgba(1,4,10,0.38)] backdrop-blur-xl"
+        : "border-transparent bg-transparent"
         }`}
     >
       <div className="page-wrap flex h-[4.7rem] items-center justify-between gap-4">

@@ -195,11 +195,29 @@ function ThreeBackground() {
 
     const resizeObserver = new ResizeObserver(resize);
     resizeObserver.observe(mount);
+
+    let isVisible = true;
+    const intersectionObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          isVisible = entry.isIntersecting;
+          if (isVisible) {
+            handleMotionPreference();
+          } else {
+            stopMotion();
+          }
+        });
+      },
+      { threshold: 0.05 }
+    );
+    intersectionObserver.observe(mount);
+
     reduceMotionQuery.addEventListener("change", handleMotionPreference);
 
     return () => {
       stopMotion();
       resizeObserver.disconnect();
+      intersectionObserver.disconnect();
       reduceMotionQuery.removeEventListener("change", handleMotionPreference);
       scene.traverse((object) => {
         object.geometry?.dispose();

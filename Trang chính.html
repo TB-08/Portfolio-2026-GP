@@ -88,11 +88,12 @@
     <script>
       (function() {
         const iconPaths = {
-          'Photoshop': encodeURI('./ảnh icon/Adobe_Photoshop_CC_icon.svg.png'),
-          'Illustrator': encodeURI('./ảnh icon/Adobe_Illustrator_CC_icon.svg.png'),
-          'CapCut': encodeURI('./ảnh icon/fe973ef75e14e96c5fc5cdf4fcdc0ef4.jpg'),
-          'Lightroom': encodeURI('./ảnh icon/Adobe-Lightroom-Logo-Photo-Editing.webp'),
-          'After Effects': encodeURI('./ảnh icon/Adobe_After_Effects_CC_icon.svg.png')
+          'Photoshop': './images/software/photoshop.png',
+          'Illustrator': './images/software/illustrator.png',
+          'CapCut': './images/software/capcut.jpg',
+          'Lightroom': './images/software/lightroom.webp',
+          'After Effects': './images/software/aftereffects.png',
+          'DaVinci Resolve': './images/software/davinci-resolve.png'
         };
 
         function patchSoftware() {
@@ -111,8 +112,8 @@
             img.src = path;
             img.alt = name;
             img.className = 'software-mini-logo';
-            if (name === 'Lightroom' || name === 'CapCut') {
-              img.style.transform = 'scale(1.7)';
+            if (name === 'Lightroom' || name === 'CapCut' || name === 'DaVinci Resolve') {
+              img.style.transform = name === 'DaVinci Resolve' ? 'scale(1.15)' : 'scale(1.7)';
               img.style.transformOrigin = 'center';
             }
             box.appendChild(img);
@@ -124,7 +125,10 @@
 
         const observer = new MutationObserver(() => {
           const target = document.querySelector('.profile-software');
-          if (target && target.dataset.patched !== 'true') patchSoftware();
+          if (target && target.dataset.patched !== 'true') {
+            patchSoftware();
+            observer.disconnect();
+          }
           
           // Cleanup duplicate social media header (Chapter Entrance)
           const elements = document.querySelectorAll('.contents-chapter, .contents-Chapter');
@@ -133,8 +137,9 @@
           });
         });
 
-        observer.observe(document.body, { childList: true, subtree: true });
-        [100, 500, 1000, 2000].forEach(d => setTimeout(patchSoftware, d));
+        const rootEl = document.getElementById('root') || document.body;
+        observer.observe(rootEl, { childList: true, subtree: true });
+        [100, 500, 1000].forEach(d => setTimeout(patchSoftware, d));
       })();
     </script>
   </body>

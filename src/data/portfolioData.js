@@ -587,6 +587,7 @@ export const softwareList = [
   "CapCut",
   "Lightroom",
   "After Effects",
+  "DaVinci Resolve",
 ];
 
 export const logoVariationLabels = [

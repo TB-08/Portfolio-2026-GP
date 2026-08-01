@@ -1707,14 +1707,16 @@ section {
     align-items: start;
     gap: 2.5rem;
   }
-  
+
   .profile-side-column {
     display: flex !important;
     flex-direction: column;
     position: sticky;
     top: 6.5rem;
-    height: 720px !important; /* Perfect height aligning with the profile card! */
-    overflow: hidden !important; /* Mask items out of bounds */
+    height: 720px !important;
+    /* Perfect height aligning with the profile card! */
+    overflow: hidden !important;
+    /* Mask items out of bounds */
     border-radius: 1.2rem;
   }
 
@@ -1725,7 +1727,8 @@ section {
     position: absolute;
     left: 0;
     right: 0;
-    height: 5.5rem; /* Height of the elegant blur/fade-out mask */
+    height: 5.5rem;
+    /* Height of the elegant blur/fade-out mask */
     z-index: 5;
     pointer-events: none;
   }
@@ -1733,14 +1736,16 @@ section {
   .profile-side-column::before {
     top: 0;
     background: linear-gradient(to bottom, #01040a 12%, rgba(1, 4, 10, 0.6) 42%, transparent);
-    backdrop-filter: blur(1.2px); /* Lighter blur as requested! */
+    backdrop-filter: blur(1.2px);
+    /* Lighter blur as requested! */
     -webkit-backdrop-filter: blur(1.2px);
   }
 
   .profile-side-column::after {
     bottom: 0;
     background: linear-gradient(to top, #01040a 12%, rgba(1, 4, 10, 0.6) 42%, transparent);
-    backdrop-filter: blur(1.2px); /* Lighter blur as requested! */
+    backdrop-filter: blur(1.2px);
+    /* Lighter blur as requested! */
     -webkit-backdrop-filter: blur(1.2px);
   }
 
@@ -1749,11 +1754,13 @@ section {
     display: flex;
     flex-direction: column;
     gap: 1.8rem;
-    animation: marquee-scroll-vertical 26s linear infinite; /* Left column scrolling duration */
+    animation: marquee-scroll-vertical 26s linear infinite;
+    /* Left column scrolling duration */
   }
 
   .profile-side-right .profile-marquee-inner {
-    animation: marquee-scroll-vertical 32s linear infinite; /* Right column scrolling duration (slightly offset) */
+    animation: marquee-scroll-vertical 32s linear infinite;
+    /* Right column scrolling duration (slightly offset) */
   }
 
   /* Pause loop scrolling on hover so users can easily read or click the certificate card! */
@@ -1766,8 +1773,10 @@ section {
     0% {
       transform: translateY(0);
     }
+
     100% {
-      transform: translateY(calc(-50% - 0.9rem)); /* Shifts by exactly one set including gap */
+      transform: translateY(calc(-50% - 0.9rem));
+      /* Shifts by exactly one set including gap */
     }
   }
 
@@ -1780,7 +1789,7 @@ section {
   .profile-side-column {
     display: none !important;
   }
-  
+
   .profile-mobile-certs-grid {
     display: grid !important;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1788,7 +1797,7 @@ section {
     margin-top: 3rem;
     padding-inline: 1rem;
   }
-  
+
   .profile-mobile-certs-grid .profile-label {
     grid-column: 1 / -1;
     margin-bottom: 0.5rem;
@@ -1947,12 +1956,15 @@ section {
 
 .profile-nameplate h3 {
   color: white;
-  font-size: clamp(1.4rem, 3.2vw, 1.95rem) !important; /* Perfectly balanced size to prevent breaking */
+  font-size: clamp(1.4rem, 3.2vw, 1.95rem) !important;
+  /* Perfectly balanced size to prevent breaking */
   font-weight: 900;
   line-height: 1.05;
   text-transform: uppercase;
-  white-space: nowrap !important; /* Forces the text to stay on a single line! */
-  letter-spacing: -0.025em !important; /* Elegant tighter letter spacing for premium look */
+  white-space: nowrap !important;
+  /* Forces the text to stay on a single line! */
+  letter-spacing: -0.025em !important;
+  /* Elegant tighter letter spacing for premium look */
 }
 
 .profile-nameplate p {
@@ -2068,7 +2080,7 @@ section {
 }
 
 .profile-contact a,
-.profile-contact > span {
+.profile-contact>span {
   overflow-wrap: anywhere;
   color: white;
   font-size: 0.82rem;
@@ -2080,7 +2092,7 @@ section {
   gap: 0.48rem;
 }
 
-.profile-contact > span {
+.profile-contact>span {
   border-top: 1px solid rgba(255, 255, 255, 0.13);
   padding-top: 0.58rem;
   color: rgba(200, 212, 234, 0.82);
@@ -2121,28 +2133,33 @@ section {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: clamp(1.4rem, 4vw, 3.6rem) !important; /* Moved to the bottom near the blue shirt/area 2! */
-  z-index: 20 !important; /* Brought to the front to overlay beautifully! */
+  bottom: clamp(1.4rem, 4vw, 3.6rem) !important;
+  /* Moved to the bottom near the blue shirt/area 2! */
+  z-index: 20 !important;
+  /* Brought to the front to overlay beautifully! */
   text-align: center;
-  pointer-events: none; /* Make sure it doesn't block hover events of the boy links! */
+  pointer-events: none;
+  /* Make sure it doesn't block hover events of the boy links! */
 }
 
 .contents-heading h2 {
   font-size: clamp(2.7rem, 7vw, 5rem);
   line-height: 0.92;
-  color: #ffffff !important; /* White fill for perfect contrast! */
-  -webkit-text-stroke: 1.5px #1740AB !important; /* Thick blue stroke for readability on dark/light elements! */
+  color: #ffffff !important;
+  /* White fill for perfect contrast! */
+  -webkit-text-stroke: 1.5px #1740AB !important;
+  /* Thick blue stroke for readability on dark/light elements! */
   text-shadow: 0 4px 16px rgba(23, 64, 171, 0.25) !important;
 }
 
 .contents-heading .eyebrow {
   color: #1740AB !important;
   font-weight: 700 !important;
-  text-shadow: 
-    -1.5px -1.5px 0 #ffffff,  
-     1.5px -1.5px 0 #ffffff,
-    -1.5px  1.5px 0 #ffffff,
-     1.5px  1.5px 0 #ffffff !important;
+  text-shadow:
+    -1.5px -1.5px 0 #ffffff,
+    1.5px -1.5px 0 #ffffff,
+    -1.5px 1.5px 0 #ffffff,
+    1.5px 1.5px 0 #ffffff !important;
 }
 
 .contents-index-item {
@@ -2151,8 +2168,10 @@ section {
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: center;
-  gap: 0.88rem; /* Slightly larger gap */
-  max-width: 16rem; /* Slightly wider to accommodate larger text */
+  gap: 0.88rem;
+  /* Slightly larger gap */
+  max-width: 16rem;
+  /* Slightly wider to accommodate larger text */
   color: #1740ab;
   text-transform: uppercase;
   transition: transform 220ms ease;
@@ -2164,7 +2183,8 @@ section {
 
 .contents-index-item span {
   font-family: "Arial Black", Impact, sans-serif;
-  font-size: clamp(2.9rem, 6.5vw, 5.5rem); /* Slightly larger numbers */
+  font-size: clamp(2.9rem, 6.5vw, 5.5rem);
+  /* Slightly larger numbers */
   line-height: 0.9;
   text-shadow:
     0.12rem 0 rgba(93, 133, 219, 0.34),
@@ -2187,12 +2207,15 @@ section {
 .contents-index-item-2 {
   right: 5% !important;
   top: 5% !important;
-  grid-template-columns: 1fr auto !important; /* Reverses layout order */
+  grid-template-columns: 1fr auto !important;
+  /* Reverses layout order */
   text-align: right;
 }
+
 .contents-index-item-2 span {
   order: 2 !important;
 }
+
 .contents-index-item-2 strong {
   order: 1 !important;
 }
@@ -2200,19 +2223,24 @@ section {
 .contents-index-item-3 {
   left: 5% !important;
   bottom: 5% !important;
-  top: auto !important; /* Clears top coordinate */
+  top: auto !important;
+  /* Clears top coordinate */
 }
 
 .contents-index-item-4 {
   right: 5% !important;
   bottom: 5% !important;
-  top: auto !important; /* Clears top coordinate */
-  grid-template-columns: 1fr auto !important; /* Reverses layout order */
+  top: auto !important;
+  /* Clears top coordinate */
+  grid-template-columns: 1fr auto !important;
+  /* Reverses layout order */
   text-align: right;
 }
+
 .contents-index-item-4 span {
   order: 2 !important;
 }
+
 .contents-index-item-4 strong {
   order: 1 !important;
 }
@@ -2256,7 +2284,7 @@ section {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: 
+  background-image:
     linear-gradient(rgba(18, 70, 221, 0.12) 1px, transparent 1px),
     linear-gradient(90deg, rgba(18, 70, 221, 0.12) 1px, transparent 1px);
   background-size: 1.6rem 1.6rem;
@@ -2276,26 +2304,31 @@ section {
   display: flex !important;
   justify-content: center !important;
   align-items: flex-end !important;
-  width: min(96%, 39rem) !important; /* Made significantly larger so the boy looks huge and magnificent! */
-  height: 41rem !important; /* Tall height so he beautifully spans almost the entire height of the card! */
+  width: min(96%, 39rem) !important;
+  /* Made significantly larger so the boy looks huge and magnificent! */
+  height: 41rem !important;
+  /* Tall height so he beautifully spans almost the entire height of the card! */
 }
 
 .contents-popout-avatar {
   display: block !important;
   width: 100% !important;
   height: 100% !important;
-  object-fit: contain !important; /* Ensures the elbow and arms are fully visible, no cropping! */
+  object-fit: contain !important;
+  /* Ensures the elbow and arms are fully visible, no cropping! */
   /* Since it's a transparent PNG from Photoroom, we can use normal blend mode with a stunning body-contour drop shadow! */
   mix-blend-mode: normal !important;
   filter: drop-shadow(0 8px 28px rgba(18, 70, 221, 0.32)) contrast(110%) brightness(100%) !important;
-  transform: translateY(0.5rem) scale(1.22) !important; /* Enlarged slightly inside the wrapper! */
+  transform: translateY(0.5rem) scale(1.22) !important;
+  /* Enlarged slightly inside the wrapper! */
   transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1) !important;
   transform-origin: bottom center !important;
   will-change: transform, filter !important;
 }
 
 .contents-center-link-group:hover .contents-popout-avatar {
-  transform: translateY(-6px) scale(1.25) !important; /* Sizable, elegant hover bounce and scale zoom! */
+  transform: translateY(-6px) scale(1.25) !important;
+  /* Sizable, elegant hover bounce and scale zoom! */
   filter: drop-shadow(0 14px 38px rgba(93, 133, 219, 0.58)) contrast(115%) brightness(105%) !important;
 }
 
@@ -2310,7 +2343,7 @@ section {
 .contents-kv-overlay {
   position: absolute !important;
   inset: 0 !important;
-  background: 
+  background:
     radial-gradient(circle at 50% 45%, transparent 20%, rgba(1, 4, 10, 0.88) 96%),
     linear-gradient(180deg, rgba(18, 70, 221, 0.14) 0%, transparent 60%) !important;
   mix-blend-mode: normal !important;
@@ -2454,14 +2487,14 @@ section {
   background: rgba(1, 4, 10, 0.34);
 }
 
-.project-card > div:first-child,
+.project-card>div:first-child,
 .logo-tile,
 .ui-screen,
 .other-project-card article {
   border-radius: 0;
 }
 
-.social-feed-grid .project-card > div:first-child {
+.social-feed-grid .project-card>div:first-child {
   padding: 0.48rem;
   border-color: rgba(200, 212, 234, 0.38);
   background: #01040a;
@@ -2882,14 +2915,14 @@ body {
   gap: clamp(0.95rem, 1.55vw, 1.35rem);
 }
 
-.featured-card > div {
+.featured-card>div {
   backdrop-filter: blur(16px);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.07),
     0 28px 82px rgba(0, 0, 0, 0.35);
 }
 
-.featured-card-primary > div {
+.featured-card-primary>div {
   border-color: rgba(239, 68, 68, 0.2);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.09),
@@ -2924,15 +2957,21 @@ body {
   gap: clamp(0.9rem, 1.5vw, 1.3rem);
 }
 
-.editorial-card > div {
+.editorial-card {
+  contain: content;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.editorial-card>div {
   backdrop-filter: blur(14px);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.055),
     0 22px 54px rgba(0, 0, 0, 0.24);
 }
 
-.editorial-card-lead > div,
-.editorial-card-hero-left > div {
+.editorial-card-lead>div,
+.editorial-card-hero-left>div {
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.08),
     0 30px 96px rgba(18, 70, 221, 0.13),
@@ -3185,3 +3224,63 @@ body {
   contain-intrinsic-size: auto 1000px;
 }
 
+/* Comprehensive Responsive Enhancements across Devices */
+/* Extra Small Mobile Devices (< 400px) */
+@media (max-width: 24.99rem) {
+  .page-wrap {
+    width: min(calc(100% - 1rem), 90rem);
+  }
+
+  .portfolio-cover {
+    font-size: clamp(2.2rem, 11vw, 3.2rem);
+  }
+
+  .editorial-media-default,
+  .editorial-media-portrait,
+  .editorial-media-panorama {
+    min-height: clamp(14rem, 65vw, 19rem);
+  }
+}
+
+/* Mobile & Small Tablets (< 640px) */
+@media (max-width: 39.99rem) {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .blue-button,
+  .ghost-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Tablets & Medium Laptops (640px to 1024px) */
+@media (min-width: 40rem) and (max-width: 63.99rem) {
+  .page-wrap {
+    width: min(calc(100% - 2.5rem), 64rem);
+  }
+
+  .editorial-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .editorial-media-default {
+    min-height: clamp(18rem, 30vw, 24rem);
+  }
+}
+
+/* Laptops & PC Desktop (1024px+) */
+@media (min-width: 64rem) {
+  .page-wrap {
+    width: min(calc(100% - 4rem), 86rem);
+  }
+}
+
+/* Ultrawide Displays (1600px+) */
+@media (min-width: 100rem) {
+  .page-wrap {
+    width: min(calc(100% - 6rem), 96rem);
+  }
+}

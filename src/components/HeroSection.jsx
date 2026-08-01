@@ -14,6 +14,7 @@ function HeroSection() {
           loop
           muted
           playsInline
+          preload="metadata"
           className="absolute min-h-full min-w-full object-cover opacity-70 mix-blend-screen scale-105"
           style={{ filter: "brightness(1.1) contrast(1.1)" }}
         >
@@ -36,9 +37,9 @@ function HeroSection() {
           +
         </div>
 
-        <div className="relative isolate flex flex-1 flex-col justify-center">
+        <div className="relative isolate flex flex-1 flex-col items-center justify-center text-center">
           <motion.div
-            className="relative z-20 flex flex-wrap items-center gap-3 text-xs font-medium uppercase text-[#C8D4EA]/84 sm:text-sm"
+            className="relative z-20 flex flex-wrap items-center justify-center gap-3 text-xs font-medium uppercase text-[#C8D4EA]/84 sm:text-sm"
             initial={reduceMotion ? false : { opacity: 0, y: 18 }}
             animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
@@ -49,7 +50,7 @@ function HeroSection() {
           </motion.div>
 
           <motion.h1
-            className="portfolio-cover relative z-10 mt-7 uppercase text-white"
+            className="portfolio-cover relative z-10 mt-7 text-center uppercase text-white"
             initial={reduceMotion ? false : { opacity: 0, y: 44 }}
             animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
             transition={{ duration: 0.95, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
@@ -58,23 +59,23 @@ function HeroSection() {
           </motion.h1>
 
           <motion.div
-            className="cover-caption relative z-20 mt-7 grid max-w-5xl gap-5 lg:grid-cols-[1fr_auto] lg:items-end"
+            className="cover-caption relative z-20 mt-7 flex flex-col items-center justify-center text-center max-w-4xl mx-auto gap-6"
             initial={reduceMotion ? false : { opacity: 0, y: 30 }}
             animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.22 }}
           >
-            <div>
+            <div className="flex flex-col items-center text-center">
               <p className="text-lg font-black uppercase text-white sm:text-2xl">
                 {designerProfile.portfolioTitle}
               </p>
               <p className="mt-3 text-2xl font-semibold text-white sm:text-[2rem]">
                 {designerProfile.name}
               </p>
-              <p className="mt-2 max-w-xl break-words text-base leading-7 text-[#C8D4EA]/82">
+              <p className="mt-2 max-w-xl break-words text-center text-base leading-7 text-[#C8D4EA]/82">
                 {designerProfile.roles}
               </p>
             </div>
-            <div className="flex flex-col gap-3 sm:flex-row">
+            <div className="flex flex-col gap-3 sm:flex-row items-center justify-center">
               <a className="blue-button inline-flex justify-center" href="#selected-works">
                 View Projects
                 <ArrowDown size={16} />

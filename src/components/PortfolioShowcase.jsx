@@ -1,5 +1,5 @@
 import { ArrowUpRight, ExternalLink, X } from "lucide-react";
-import { AnimatePresence, motion, useReducedMotion, useMotionValue, useSpring, useTransform } from "motion/react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { useEffect, useMemo, useState, useRef } from "react";
 import { portfolioCategories, portfolioShowcase } from "../data/portfolioShowcase";
 
@@ -69,7 +69,7 @@ function ProjectPreview({ work, onClose }) {
       onMouseDown={onClose}
     >
       <motion.div
-        className="relative flex max-h-[94svh] w-full max-w-[96rem] flex-col overflow-hidden rounded-3xl border border-white/12 bg-[#030817] p-3 shadow-2xl sm:p-5"
+        className="relative flex max-h-[92svh] w-full max-w-[96rem] flex-col overflow-y-auto rounded-3xl border border-white/12 bg-[#030817] p-3 shadow-2xl sm:p-5"
         initial={{ opacity: 0, y: 18, scale: 0.98 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         exit={{ opacity: 0, y: 12, scale: 0.985 }}
@@ -77,14 +77,14 @@ function ProjectPreview({ work, onClose }) {
         onMouseDown={(event) => event.stopPropagation()}
       >
         <button
-          className="absolute right-5 top-5 z-10 grid h-11 w-11 place-items-center rounded-full border border-white/12 bg-[#01040A]/80 text-white backdrop-blur-md transition hover:border-white/30"
+          className="absolute right-3 top-3 z-10 grid h-10 w-10 place-items-center rounded-full border border-white/12 bg-[#01040A]/80 text-white backdrop-blur-md transition hover:border-white/30 sm:right-5 sm:top-5 sm:h-11 sm:w-11"
           type="button"
           aria-label="Close project preview"
           onClick={onClose}
         >
           <X size={18} />
         </button>
-        <div className={`relative min-h-[62svh] w-full overflow-hidden rounded-2xl ${theme.surface}`}>
+        <div className={`relative min-h-[45svh] sm:min-h-[62svh] w-full overflow-hidden rounded-2xl ${theme.surface}`}>
           <img
             className="absolute inset-0 block h-full w-full object-contain object-center p-3 sm:p-7"
             src={work.src}
@@ -302,39 +302,9 @@ function ArtworkCard({ work, index, isLead, onPreview }) {
         ? "editorial-media-panorama"
         : "editorial-media-default";
 
-  const cardRef = useRef(null);
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-
-  const mouseXSpring = useSpring(x, { stiffness: 300, damping: 40 });
-  const mouseYSpring = useSpring(y, { stiffness: 300, damping: 40 });
-
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["4deg", "-4deg"]);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-4deg", "4deg"]);
-
-  const handleMouseMove = (e) => {
-    if (!cardRef.current || reduceMotion) return;
-    const rect = cardRef.current.getBoundingClientRect();
-    const width = rect.width;
-    const height = rect.height;
-    const mouseX = e.clientX - rect.left;
-    const mouseY = e.clientY - rect.top;
-    const xPct = mouseX / width - 0.5;
-    const yPct = mouseY / height - 0.5;
-    x.set(xPct);
-    y.set(yPct);
-  };
-
-  const handleMouseLeave = () => {
-    if (reduceMotion) return;
-    x.set(0);
-    y.set(0);
-  };
-
   return (
     <motion.figure
       layout
-      ref={cardRef}
       className={`editorial-card group ${cardClass}`}
       initial={reduceMotion ? false : { opacity: 0, y: 35, scale: 0.95 }}
       animate={reduceMotion ? undefined : { opacity: 1, y: 0, scale: 1 }}
@@ -520,36 +490,6 @@ function PortfolioShowcase() {
             </div>
           </div>
         </header>
-
-        <nav
-          className="mb-10 flex w-full snap-x gap-2 overflow-x-auto rounded-[1.25rem] border border-white/10 bg-[#020613]/50 p-2 backdrop-blur-xl lg:mb-14 lg:w-fit"
-          role="tablist"
-          aria-label="Portfolio work categories"
-        >
-          {portfolioCategories.map((category) => {
-            const isActive = category.id === activeCategory;
-
-            return (
-              <button
-                key={category.id}
-                className={`relative shrink-0 snap-start rounded-xl px-5 py-3 text-sm font-medium transition duration-300 ${
-                  isActive
-                    ? "text-white"
-                    : "text-[#C8D4EA]/70 hover:text-white"
-                }`}
-                type="button"
-                role="tab"
-                aria-selected={isActive}
-                onClick={() => selectCategory(category)}
-              >
-                {isActive && (
-                  <div className="absolute inset-0 rounded-xl bg-[#1740AB]/60 border border-white/10" />
-                )}
-                <span className="relative z-10">{category.label}</span>
-              </button>
-            );
-          })}
-        </nav>
 
         <AnimatePresence mode="wait" initial={false}>
           <motion.div key={activeCategory} className="grid gap-10 lg:gap-14">

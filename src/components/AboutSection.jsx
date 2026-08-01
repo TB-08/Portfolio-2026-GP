@@ -89,25 +89,33 @@ function AboutSection() {
               <div>
                 <p className="profile-label">Software</p>
                 <div className="profile-software">
-                  {softwareList.map((software, index) => {
-                    const iconMap = {
-                      Photoshop: "adobephotoshop",
-                      Illustrator: "adobeillustrator",
-                      CapCut: "capcut",
-                      Lightroom: "adobelightroom",
-                      "After Effects": "adobeaftereffects",
+                  {softwareList.map((software) => {
+                    const localIconMap = {
+                      Photoshop: "./images/software/photoshop.png",
+                      Illustrator: "./images/software/illustrator.png",
+                      CapCut: "./images/software/capcut.jpg",
+                      Lightroom: "./images/software/lightroom.webp",
+                      "After Effects": "./images/software/aftereffects.png",
+                      "DaVinci Resolve": "./images/software/davinci-resolve.png",
                     };
-                    const brandSlug = iconMap[software] || software.toLowerCase();
+                    const iconSrc = localIconMap[software];
                     return (
                       <div 
                         key={software} 
-                        className="software-icon-box" 
+                        className={`software-icon-box ${software === "CapCut" ? "white-bg" : ""}`}
                         title={software}
                       >
                         <img
-                          src={`https://cdn.simpleicons.org/${brandSlug}/white`}
+                          src={iconSrc}
                           alt={software}
                           className="software-mini-logo"
+                          style={
+                            software === "Lightroom" || software === "CapCut"
+                              ? { transform: "scale(1.7)", transformOrigin: "center" }
+                              : software === "DaVinci Resolve"
+                              ? { transform: "scale(1.15)", transformOrigin: "center" }
+                              : undefined
+                          }
                         />
                       </div>
                     );
@@ -237,7 +245,7 @@ function AboutSection() {
             onClick={() => setSelectedCert(null)}
           >
             <motion.div
-              className="relative flex max-h-[92svh] w-full max-w-[76rem] flex-col overflow-hidden rounded-2xl border border-white/12 bg-[#030817] p-2 shadow-2xl sm:p-4"
+              className="relative flex max-h-[92svh] w-full max-w-[76rem] flex-col overflow-y-auto rounded-2xl border border-white/12 bg-[#030817] p-2 shadow-2xl sm:p-4"
               initial={{ opacity: 0, scale: 0.96, y: 15 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.96, y: 10 }}
@@ -245,7 +253,7 @@ function AboutSection() {
               onClick={(event) => event.stopPropagation()}
             >
               <button
-                className="absolute right-4 top-4 z-10 grid h-10 w-10 place-items-center rounded-full border border-white/12 bg-[#01040A]/85 text-white backdrop-blur-md transition hover:border-white/30 hover:scale-105 active:scale-95 cursor-pointer"
+                className="absolute right-3 top-3 z-10 grid h-9 w-9 place-items-center rounded-full border border-white/12 bg-[#01040A]/85 text-white backdrop-blur-md transition hover:border-white/30 hover:scale-105 active:scale-95 cursor-pointer sm:right-4 sm:top-4 sm:h-10 sm:w-10"
                 type="button"
                 aria-label="Close certificate preview"
                 onClick={() => setSelectedCert(null)}
