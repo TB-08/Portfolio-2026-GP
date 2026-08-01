@@ -35,7 +35,7 @@ function landingPageEntry() {
 
 export default defineConfig(({ mode }) => ({
   plugins: [landingPageEntry(), react(), tailwindcss()],
-  base: mode === "standalone" ? "./" : "/",
+  base: "./",
   build: {
     assetsInlineLimit: mode === "standalone" ? 100000000 : undefined,
     rollupOptions: {
