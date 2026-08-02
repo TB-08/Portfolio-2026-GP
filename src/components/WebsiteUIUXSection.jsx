@@ -26,7 +26,7 @@ function CaseStudyCard({ project, delay }) {
           </div>
         </div>
         <button
-          className="ghost-button mt-5 inline-flex"
+          className="blue-button mt-5 inline-flex"
           type="button"
           aria-label={`View ${project.title} case study placeholder`}
         >

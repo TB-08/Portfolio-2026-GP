@@ -147,7 +147,7 @@ function WebsiteFeature({ work, onPreview }) {
             </p>
           </div>
           <a
-            className="ghost-button inline-flex shrink-0"
+            className="blue-button inline-flex shrink-0"
             href={work.websiteUrl}
             target="_blank"
             rel="noreferrer"
@@ -199,7 +199,6 @@ function FeaturedCard({ work, index, onPreview }) {
 
   return (
     <motion.figure
-      layout
       className={`featured-card featured-card-${work.featurePlacement} group`}
       initial={reduceMotion ? false : { opacity: 0, y: 28 }}
       animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
@@ -262,7 +261,6 @@ function FeaturedCard({ work, index, onPreview }) {
 function FeaturedSelection({ works, onPreview }) {
   return (
     <motion.section
-      layout
       className="featured-selection"
       aria-label="Featured works"
       initial={{ opacity: 0 }}
@@ -304,7 +302,6 @@ function ArtworkCard({ work, index, isLead, onPreview }) {
 
   return (
     <motion.figure
-      layout
       className={`editorial-card group ${cardClass}`}
       initial={reduceMotion ? false : { opacity: 0, y: 35, scale: 0.95 }}
       animate={reduceMotion ? undefined : { opacity: 1, y: 0, scale: 1 }}
@@ -371,7 +368,6 @@ function Collection({ category, works, onPreview }) {
 
   return (
     <motion.section
-      layout
       className="portfolio-collection"
       aria-label={category.label}
       initial={{ opacity: 0 }}

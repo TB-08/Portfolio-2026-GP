@@ -15,7 +15,7 @@ function HeroSection() {
           muted
           playsInline
           preload="metadata"
-          className="absolute min-h-full min-w-full object-cover opacity-70 mix-blend-screen scale-105"
+          className="absolute min-h-full min-w-full object-cover opacity-65 lg:mix-blend-screen scale-105"
           style={{ filter: "brightness(1.1) contrast(1.1)" }}
         >
           {/* Use relative path so it works offline/standalone */}
@@ -89,7 +89,7 @@ function HeroSection() {
         </div>
 
         <motion.div
-          className="cover-strip relative z-20 mt-8 grid gap-px overflow-hidden border border-white/14 lg:grid-cols-4"
+          className="cover-strip relative z-20 mt-8 grid grid-cols-2 gap-px overflow-hidden border border-white/14 lg:grid-cols-4"
           initial={reduceMotion ? false : { opacity: 0, y: 24 }}
           animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.34 }}

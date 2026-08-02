@@ -180,8 +180,10 @@ function ThreeBackground() {
         animationFrame = 0;
       }
     };
+    const isMobileScreen = window.matchMedia("(max-width: 1023px)").matches;
+
     const handleMotionPreference = () => {
-      if (reduceMotionQuery.matches) {
+      if (reduceMotionQuery.matches || isMobileScreen) {
         stopMotion();
         renderScene();
         return;

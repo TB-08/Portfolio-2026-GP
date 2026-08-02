@@ -28,8 +28,8 @@ function Header() {
         }`}
     >
       <div className="page-wrap flex h-[4.7rem] items-center justify-between gap-4">
-        <a className="group flex items-center" href="#top" aria-label="Gia Phát portfolio home">
-          <img src="./images/logo.png" alt="Gia Phát Logo" className="h-10 w-auto object-contain brightness-0 invert opacity-90 transition-opacity group-hover:opacity-100 sm:h-12" />
+        <a className="group flex h-9 sm:h-11 items-center overflow-hidden" href="#top" aria-label="Gia Phát portfolio home">
+          <img src="./images/logo.png" alt="Gia Phát Logo" className="h-full w-auto max-h-8 sm:max-h-10 object-contain brightness-0 invert opacity-90 transition-opacity group-hover:opacity-100" />
         </a>
 
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary navigation">
