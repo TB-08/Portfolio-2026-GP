@@ -340,6 +340,17 @@ const socialWorks = [
     alt: "Caryophy skincare campaign visual 02",
     sourceFiles: ["CATAGOPHY (2).png"],
   },
+  {
+    id: "caryophy-matcha",
+    title: "Caryophy Matcha Campaign",
+    tone: "Product Campaign Visual",
+    colorTag: "Matcha / Green",
+    src: showcaseImage("matcha.png"),
+    orientation: "wide",
+    layout: "full",
+    alt: "Caryophy Matcha skincare campaign promotional visual",
+    sourceFiles: ["MATCHA.png"],
+  },
 ];
 
 const logoWorks = [
