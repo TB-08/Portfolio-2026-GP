@@ -346,10 +346,21 @@ const socialWorks = [
     tone: "Product Campaign Visual",
     colorTag: "Matcha / Green",
     src: showcaseImage("matcha.png"),
-    orientation: "wide",
-    layout: "full",
+    orientation: "portrait",
+    layout: "half",
     alt: "Caryophy Matcha skincare campaign promotional visual",
     sourceFiles: ["MATCHA.png"],
+  },
+  {
+    id: "caryophy-magazine",
+    title: "Caryophy Magazine Visual",
+    tone: "Editorial Campaign Visual",
+    colorTag: "Forest / Green",
+    src: showcaseImage("tap-chi.png"),
+    orientation: "portrait",
+    layout: "half",
+    alt: "Caryophy magazine editorial promotional visual",
+    sourceFiles: ["tạp chí.png"],
   },
 ];
 
