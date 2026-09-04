@@ -139,7 +139,7 @@ function AboutSection() {
                 <div className="mb-6">
                   <p className="profile-label">About Me</p>
                   <p className="mt-3 max-w-2xl text-sm leading-6 text-[#C8D4EA]/88 sm:text-base">
-                    Là sinh viên năm 2 ngành Social Media – Đại học FPT Đà Nẵng, tôi có hơn 1 năm kinh nghiệm thực chiến trong Graphic Design, Video Editing và UI/UX qua nhiều dự án thuộc lĩnh vực du lịch, F&B, sự kiện và thương mại. Từng làm việc tại Go Media Agency với vai trò Graphic Designer, tôi đã tham gia phát triển sản phẩm truyền thông cho Queen Bus, The New Way, Sea Lavie, Hoi An Unique Travel; thiết kế UI/UX website cho Trung Nguyên Legend, TapGO, Zenith House; và triển khai social post cho PongDang, Ryo Japanese, Yoshino Izakaya Shoten. Ngoài ra, tôi từng đảm nhiệm vai trò Design Coordinator tại AIESEC và thiết kế logo cho sự kiện JCI Leadership Boost. Thành thạo Adobe, CapCut và ứng dụng AI, tôi hướng đến việc tạo ra các sản phẩm thiết kế hiện đại, chỉn chu và có giá trị thực tiễn.
+                    Sinh viên năm 2 ngành Social Media tại Đại học FPT Đà Nẵng, có hơn 1 năm kinh nghiệm thực chiến về Graphic Design, Video Editing và UI/UX trong các lĩnh vực du lịch, F&B, sự kiện và thương mại. Từng làm việc tại Go Media Agency, Nội Thất Gia Phong, tham gia thiết kế UI/UX website cho Trung Nguyên Legend và triển khai social post cho PongDang, Ryo Japanese, Yoshino Izakaya Shoten. Ngoài ra, tôi từng là Design Coordinator tại AIESEC và thiết kế logo cho sự kiện JCI Leadership Boost.
                   </p>
                 </div>
 
