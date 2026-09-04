@@ -36,11 +36,46 @@ function landingPageEntry() {
 export default defineConfig(({ mode }) => ({
   plugins: [landingPageEntry(), react(), tailwindcss()],
   base: "./",
+  server: {
+    warmup: {
+      clientFiles: [
+        "./src/App.jsx",
+        "./src/components/PortfolioShowcase.jsx",
+        "./src/index.css",
+      ],
+    },
+  },
+  optimizeDeps: {
+    include: ["react", "react-dom", "motion/react", "lucide-react", "lenis"],
+  },
   build: {
-    assetsInlineLimit: mode === "standalone" ? 100000000 : undefined,
+    target: "es2020",
+    cssCodeSplit: true,
+    assetsInlineLimit: mode === "standalone" ? 100000000 : 4096,
     rollupOptions: {
       input: landingPage,
-      output: mode === "standalone" ? { codeSplitting: false } : undefined,
+      output:
+        mode === "standalone"
+          ? { codeSplitting: false }
+          : {
+              manualChunks(id) {
+                if (id.includes("node_modules")) {
+                  if (id.includes("react") || id.includes("react-dom")) {
+                    return "vendor-react";
+                  }
+                  if (id.includes("motion")) {
+                    return "vendor-motion";
+                  }
+                  if (id.includes("lucide-react")) {
+                    return "vendor-icons";
+                  }
+                  if (id.includes("lenis")) {
+                    return "vendor-lenis";
+                  }
+                  return "vendor";
+                }
+              },
+            },
     },
   },
 }));

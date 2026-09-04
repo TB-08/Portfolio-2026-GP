@@ -1,9 +1,10 @@
 export const designerProfile = {
   name: "Văn Hữu Gia Phát",
   portfolioTitle: "Graphic Design Portfolio 2026",
-  roles: "Thiết kế Đồ họa / Thiết kế Social Media / Thiết kế UI UX",
+  roles: "Thiết kế Đồ họa / Editor",
   email: "vanhuugiaphat@gmail.com",
-  location: "Việt Nam",
+  facebookUrl: "https://www.facebook.com/giaphat.vanhuu.7",
+  location: "Đà Nẵng",
   availability: "Sẵn sàng hợp tác / Freelance",
   heroSkills: "Hình ảnh Social, logo, bố cục UI",
   softwareSummary: "Photoshop, Illustrator, CapCut",
@@ -573,12 +574,10 @@ export const skillList = [
   "Thiết kế Key Visual",
   "Thiết kế Logo",
   "Thiết kế Web UI UX",
-  "Thiết kế Bố cục",
   "Nghệ thuật Chữ (Typography)",
   "Chỉnh sửa Ảnh",
   "Hình ảnh Quảng cáo",
   "Thiết kế Landing Page",
-  "Thiết kế hỗ trợ bởi AI",
 ];
 
 export const softwareList = [

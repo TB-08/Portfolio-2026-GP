@@ -14,10 +14,10 @@ function ContactSection() {
         </span>
         <Reveal className="grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:items-center">
           <div className="min-w-0">
-            <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold tracking-widest text-[#78A4FF] uppercase backdrop-blur-md mb-6">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#5D85DB] opacity-75"></span>
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-[#78A4FF]"></span>
+            <div className="inline-flex items-center gap-3 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-2 text-sm font-semibold tracking-widest text-emerald-400 uppercase backdrop-blur-md mb-6 shadow-[0_0_20px_rgba(16,185,129,0.18)]">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400 shadow-[0_0_10px_#34d399]"></span>
               </span>
               Available for work
             </div>
@@ -38,12 +38,12 @@ function ContactSection() {
             <div className="relative z-10 mt-10 grid gap-4 sm:grid-cols-2">
               <a
                 className="group/btn relative flex items-center justify-center gap-3 overflow-hidden rounded-2xl bg-gradient-to-r from-[#5D85DB] to-[#436ecb] px-6 py-4 font-semibold text-white shadow-[0_10px_20px_rgba(93,133,219,0.2)] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_15px_30px_rgba(93,133,219,0.4)] hover:brightness-110"
-                href={`https://mail.google.com/mail/?extsrc=mailto&url=mailto:${encodeURIComponent(designerProfile.email)}`}
+                href={designerProfile.facebookUrl || "https://www.facebook.com/giaphat.vanhuu.7"}
                 target="_blank"
                 rel="noreferrer"
               >
-                <span className="relative z-10">Send Email</span>
-                <Mail size={18} className="relative z-10 transition-transform duration-300 group-hover/btn:translate-x-1" />
+                <span className="relative z-10">Contact in Facebook</span>
+                <ArrowUpRight size={18} className="relative z-10 transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
               </a>
               <a
                 className="group/btn relative flex items-center justify-center gap-3 overflow-hidden rounded-2xl border border-white/20 bg-white/5 px-6 py-4 font-semibold text-white backdrop-blur-md transition-all duration-300 hover:bg-white/10 hover:scale-[1.03] hover:border-white/30"

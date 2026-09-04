@@ -27,6 +27,7 @@ function PortfolioVisual({
           src={project.image}
           alt={alt ?? `${project.title} project preview`}
           loading="lazy"
+          decoding="async"
         />
       </div>
     );

@@ -276,8 +276,8 @@ function FeaturedSelection({ works, onPreview }) {
           <h3 className="mt-3 text-2xl font-semibold text-white sm:text-4xl">Featured Works</h3>
         </div>
         <p className="max-w-xl text-sm leading-7 text-[#C8D4EA]/68 sm:text-base">
-          Four signature visuals placed at gallery scale: campaign impact, event atmosphere and
-          branded social storytelling. Each artwork appears once in this view.
+          Key visuals and lead campaign projects placed at gallery scale: commercial hero impact,
+          event atmosphere and branded social storytelling. Each artwork appears once in this view.
         </p>
       </header>
       <div className="featured-grid">
@@ -428,6 +428,8 @@ function PortfolioShowcase() {
       const hash = window.location.hash.replace("#", "");
       if (categoryByAnchor[hash]) {
         setActiveCategory(categoryByAnchor[hash]);
+      } else if (hash === "selected-works" || hash === "all" || hash === "projects") {
+        setActiveCategory("all");
       }
     };
 
@@ -452,7 +454,8 @@ function PortfolioShowcase() {
 
   const selectCategory = (category) => {
     setActiveCategory(category.id);
-    window.history.replaceState(null, "", `#${category.anchor}`);
+    window.history.pushState(null, "", `#${category.anchor}`);
+    window.dispatchEvent(new HashChangeEvent("hashchange"));
   };
 
   return (

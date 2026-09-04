@@ -46,7 +46,7 @@ function HeroSection() {
           >
             <span className="eyebrow">Graphic Design</span>
             <span className="h-px w-11 bg-white/18" />
-            <span className="min-w-0 break-words">Social Post / Logo / Web UI UX</span>
+            <span className="min-w-0 break-words">Social Post / UI UX / Video</span>
           </motion.div>
 
           <motion.h1
@@ -97,7 +97,7 @@ function HeroSection() {
           {[
             ["Designer", designerProfile.name],
             ["Based in", designerProfile.location],
-            ["Focus", "Social / Logo / UI UX"],
+            ["Focus", "Social Post / UI UX / Video"],
             ["Contact", designerProfile.email],
           ].map(([label, value]) => (
             <div key={label} className="cover-strip-cell">
