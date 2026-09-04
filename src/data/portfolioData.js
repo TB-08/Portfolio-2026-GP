@@ -8,7 +8,7 @@ export const designerProfile = {
   availability: "Sẵn sàng hợp tác / Freelance",
   heroSkills: "Hình ảnh Social, logo, bố cục UI",
   softwareSummary: "Photoshop, Illustrator, CapCut",
-  avatar: `${import.meta.env.BASE_URL}images/hero/gia-phat-avatar.jpg`,
+  avatar: `${import.meta.env.BASE_URL}images/hero/gia-phat-avatar.png`,
 };
 
 // Real project images go in /public/images.
