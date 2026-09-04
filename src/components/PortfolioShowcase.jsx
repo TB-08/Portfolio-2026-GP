@@ -222,8 +222,8 @@ function FeaturedCard({ work, index, onPreview }) {
             src={work.src}
             alt={work.alt}
             className={`absolute inset-0 block h-full max-h-full w-full max-w-full object-center ${
-              work.noPadding === false ? "p-3 sm:p-5" : "p-0"
-            } ${work.imageFit === "contain" ? "object-contain" : "object-cover"}`}
+              work.noPadding ? "p-0" : "p-1.5 sm:p-2.5"
+            } ${work.imageFit === "cover" ? "object-cover" : "object-contain"}`}
             style={work.customScale ? { transform: `scale(${work.customScale})` } : undefined}
             loading="lazy"
             decoding="async"
@@ -325,8 +325,8 @@ function ArtworkCard({ work, index, isLead, onPreview }) {
             src={work.src}
             alt={work.alt}
             className={`absolute inset-0 block h-full max-h-full w-full max-w-full object-center ${
-              work.noPadding === false ? "p-3 sm:p-5" : "p-0"
-            } ${work.imageFit === "contain" ? "object-contain" : "object-cover"}`}
+              work.noPadding ? "p-0" : "p-1.5 sm:p-2.5"
+            } ${work.imageFit === "cover" ? "object-cover" : "object-contain"}`}
             style={work.customScale ? { transform: `scale(${work.customScale})` } : undefined}
             loading="lazy"
             decoding="async"

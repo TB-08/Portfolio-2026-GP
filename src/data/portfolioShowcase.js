@@ -211,6 +211,7 @@ const socialWorks = [
     colorTag: "Crimson / Gold",
     src: showcaseImage("sieu-sale-ngang.png"),
     orientation: "panorama",
+    customAspectRatio: "2.15 / 1",
     layout: "hero",
     featured: true,
     featureOrder: 1,
