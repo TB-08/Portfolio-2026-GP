@@ -2324,20 +2324,19 @@ section {
   height: 100% !important;
   object-fit: contain !important;
   /* Ensures the elbow and arms are fully visible, no cropping! */
-  /* Since it's a transparent PNG from Photoroom, we can use normal blend mode with a stunning body-contour drop shadow! */
   mix-blend-mode: normal !important;
-  filter: drop-shadow(0 8px 28px rgba(18, 70, 221, 0.32)) contrast(110%) brightness(100%) !important;
-  transform: translateY(0.5rem) scale(1.22) !important;
-  /* Enlarged slightly inside the wrapper! */
+  filter: drop-shadow(0 8px 28px rgba(18, 70, 221, 0.32)) contrast(105%) brightness(100%) !important;
+  transform: translateY(2.6rem) scale(0.98) !important;
+  /* Shifted down so head and headphones are never cropped at the top! */
   transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1) !important;
   transform-origin: bottom center !important;
   will-change: transform, filter !important;
 }
 
 .contents-center-link-group:hover .contents-popout-avatar {
-  transform: translateY(-6px) scale(1.25) !important;
-  /* Sizable, elegant hover bounce and scale zoom! */
-  filter: drop-shadow(0 14px 38px rgba(93, 133, 219, 0.58)) contrast(115%) brightness(105%) !important;
+  transform: translateY(2rem) scale(1.02) !important;
+  /* Smooth zoom while remaining safely within top boundary */
+  filter: drop-shadow(0 14px 38px rgba(93, 133, 219, 0.58)) contrast(110%) brightness(103%) !important;
 }
 
 @media (max-width: 47.99rem) {
