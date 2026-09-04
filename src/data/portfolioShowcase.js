@@ -273,6 +273,8 @@ const socialWorks = [
     featured: true,
     featureOrder: 5,
     featurePlacement: "primary",
+    customAspectRatio: "1.94 / 1",
+    noPadding: true,
     alt: "National day 2/9 promotional banner in red and gold",
     sourceFiles: ["2.9 KV.png"],
   },
