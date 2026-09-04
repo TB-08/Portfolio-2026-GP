@@ -215,7 +215,8 @@ function FeaturedCard({ work, index, onPreview }) {
             backgroundPosition: work.matchImageBackground ? "top left" : undefined,
             backgroundRepeat: work.matchImageBackground ? "repeat" : undefined,
             aspectRatio: work.customAspectRatio || undefined,
-            minHeight: work.customAspectRatio ? "auto" : undefined
+            minHeight: work.customAspectRatio ? "auto" : undefined,
+            flex: work.customAspectRatio ? "0 0 auto" : undefined
           }}
         >
           <img
