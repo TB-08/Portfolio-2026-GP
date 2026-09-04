@@ -353,13 +353,13 @@ const socialWorks = [
   },
   {
     id: "caryophy-magazine",
-    title: "Caryophy Magazine Visual",
+    title: "Hue Magazines",
     tone: "Editorial Campaign Visual",
     colorTag: "Forest / Green",
     src: showcaseImage("tap-chi.png"),
     orientation: "portrait",
     layout: "half",
-    alt: "Caryophy magazine editorial promotional visual",
+    alt: "Hue Magazines editorial promotional visual",
     sourceFiles: ["tạp chí.png"],
   },
 ];

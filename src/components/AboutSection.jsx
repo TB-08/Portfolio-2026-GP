@@ -70,99 +70,99 @@ function AboutSection() {
         <div className="profile-center-wrap">
           <div className="profile-board-wrapper">
             <div className="profile-board">
-            <div className="profile-board-grid" aria-hidden="true" />
-            <h2 className="profile-word display-title uppercase text-white">Profile</h2>
-            <div className="profile-column">
-              <div className="portrait-placeholder">
-                <img
-                  src={designerProfile.avatar}
-                  alt={`Portrait of ${designerProfile.name}`}
-                  className="portrait-photo"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <div className="profile-nameplate">
-                <h3>{designerProfile.name}</h3>
-                <p>{designerProfile.roles}</p>
-              </div>
-              <div>
-                <p className="profile-label">Software</p>
-                <div className="profile-software">
-                  {softwareList.map((software) => {
-                    const localIconMap = {
-                      Photoshop: "./images/software/photoshop.png",
-                      Illustrator: "./images/software/illustrator.png",
-                      CapCut: "./images/software/capcut.jpg",
-                      Lightroom: "./images/software/lightroom.webp",
-                      "After Effects": "./images/software/aftereffects.png",
-                      "DaVinci Resolve": "./images/software/davinci-resolve.png",
-                    };
-                    const iconSrc = localIconMap[software];
-                    return (
-                      <div 
-                        key={software} 
-                        className={`software-icon-box ${software === "CapCut" ? "white-bg" : ""}`}
-                        title={software}
-                      >
-                        <img
-                          src={iconSrc}
-                          alt={software}
-                          className="software-mini-logo"
-                          style={
-                            software === "Lightroom" || software === "CapCut"
-                              ? { transform: "scale(1.7)", transformOrigin: "center" }
-                              : software === "DaVinci Resolve"
-                              ? { transform: "scale(1.15)", transformOrigin: "center" }
-                              : undefined
-                          }
-                        />
-                      </div>
-                    );
-                  })}
+              <div className="profile-board-grid" aria-hidden="true" />
+              <h2 className="profile-word display-title uppercase text-white">Profile</h2>
+              <div className="profile-column">
+                <div className="portrait-placeholder">
+                  <img
+                    src={designerProfile.avatar}
+                    alt={`Portrait of ${designerProfile.name}`}
+                    className="portrait-photo"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
-              </div>
-              <div className="mt-8">
-                <p className="profile-label">Experience</p>
-                <ol className="profile-timeline">
-                  {experienceTimeline.map((item, index) => (
-                    <li key={item.date}>
-                      <span>{item.date}</span>
-                      <strong>{item.role}</strong>
-                    </li>
-                  ))}
-                </ol>
-              </div>
-            </div>
-
-            <div className="profile-details">
-              <div className="mb-6">
-                <p className="profile-label">About Me</p>
-                <p className="mt-3 max-w-2xl text-sm leading-6 text-[#C8D4EA]/88 sm:text-base">
-                  Sinh viên năm 2 ngành Social Media tại Đại học FPT Đà Nẵng, có hơn 1 năm kinh nghiệm thực chiến về Graphic Design, Video Editing và UI/UX trong các lĩnh vực du lịch, F&B, sự kiện và thương mại. Từng làm việc tại Go Media Agency, Nội Thất Gia Phong, tham gia thiết kế UI/UX website cho Trung Nguyên Legend và triển khai social post cho PongDang, Ryo Japanese, Yoshino Izakaya Shoten. Ngoài ra, tôi từng là Design Coordinator tại AIESEC và thiết kế logo cho sự kiện JCI Leadership Boost.
-                </p>
-              </div>
-
-              <div className="mb-6">
-                <p className="profile-label">Skills</p>
-                <div className="profile-skills">
-                  {skillList.map((skill, index) => (
-                    <span key={skill}>
-                      {skill}
-                    </span>
-                  ))}
+                <div className="profile-nameplate">
+                  <h3>{designerProfile.name}</h3>
+                  <p>{designerProfile.roles}</p>
+                </div>
+                <div>
+                  <p className="profile-label">Software</p>
+                  <div className="profile-software">
+                    {softwareList.map((software) => {
+                      const localIconMap = {
+                        Photoshop: "./images/software/photoshop.png",
+                        Illustrator: "./images/software/illustrator.png",
+                        CapCut: "./images/software/capcut.jpg",
+                        Lightroom: "./images/software/lightroom.webp",
+                        "After Effects": "./images/software/aftereffects.png",
+                        "DaVinci Resolve": "./images/software/davinci-resolve.png",
+                      };
+                      const iconSrc = localIconMap[software];
+                      return (
+                        <div
+                          key={software}
+                          className={`software-icon-box ${software === "CapCut" ? "white-bg" : ""}`}
+                          title={software}
+                        >
+                          <img
+                            src={iconSrc}
+                            alt={software}
+                            className="software-mini-logo"
+                            style={
+                              software === "Lightroom" || software === "CapCut"
+                                ? { transform: "scale(1.7)", transformOrigin: "center" }
+                                : software === "DaVinci Resolve"
+                                  ? { transform: "scale(1.15)", transformOrigin: "center" }
+                                  : undefined
+                            }
+                          />
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+                <div className="mt-8">
+                  <p className="profile-label">Experience</p>
+                  <ol className="profile-timeline">
+                    {experienceTimeline.map((item, index) => (
+                      <li key={item.date}>
+                        <span>{item.date}</span>
+                        <strong>{item.role}</strong>
+                      </li>
+                    ))}
+                  </ol>
                 </div>
               </div>
 
-              <div className="profile-contact">
-                <p className="profile-label">Contact</p>
-                <a href={`mailto:${designerProfile.email}`}>
-                  <Mail size={16} />
-                  {designerProfile.email}
-                </a>
-                <span>{designerProfile.availability}</span>
+              <div className="profile-details">
+                <div className="mb-6">
+                  <p className="profile-label">About Me</p>
+                  <p className="mt-3 max-w-2xl text-sm leading-6 text-[#C8D4EA]/88 sm:text-base">
+                    Là sinh viên năm 2 ngành Social Media – Đại học FPT Đà Nẵng, tôi có hơn 1 năm kinh nghiệm thực chiến trong Graphic Design, Video Editing và UI/UX qua nhiều dự án thuộc lĩnh vực du lịch, F&B, sự kiện và thương mại. Từng làm việc tại Go Media Agency với vai trò Graphic Designer, tôi đã tham gia phát triển sản phẩm truyền thông cho Queen Bus, The New Way, Sea Lavie, Hoi An Unique Travel; thiết kế UI/UX website cho Trung Nguyên Legend, TapGO, Zenith House; và triển khai social post cho PongDang, Ryo Japanese, Yoshino Izakaya Shoten. Ngoài ra, tôi từng đảm nhiệm vai trò Design Coordinator tại AIESEC và thiết kế logo cho sự kiện JCI Leadership Boost. Thành thạo Adobe, CapCut và ứng dụng AI, tôi hướng đến việc tạo ra các sản phẩm thiết kế hiện đại, chỉn chu và có giá trị thực tiễn.
+                  </p>
+                </div>
+
+                <div className="mb-6">
+                  <p className="profile-label">Skills</p>
+                  <div className="profile-skills">
+                    {skillList.map((skill, index) => (
+                      <span key={skill}>
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="profile-contact">
+                  <p className="profile-label">Contact</p>
+                  <a href={`mailto:${designerProfile.email}`}>
+                    <Mail size={16} />
+                    {designerProfile.email}
+                  </a>
+                  <span>{designerProfile.availability}</span>
+                </div>
               </div>
-            </div>
             </div>
           </div>
         </div>
