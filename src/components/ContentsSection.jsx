@@ -40,7 +40,7 @@ function ContentsSection() {
             >
               <div className="contents-popout-avatar-wrap">
                 <img
-                  src={`${import.meta.env.BASE_URL}images/showcase/gphat2-Photoroom.png`}
+                  src={`${import.meta.env.BASE_URL}images/showcase/anh-gp.png`}
                   alt="Gia Phat Floating Portrait"
                   className="contents-popout-avatar"
                   loading="lazy"
